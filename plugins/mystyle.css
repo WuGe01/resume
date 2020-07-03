@@ -1,0 +1,17 @@
+.{
+    font-family: "Microsoft JhengHei",Arial, Helvetica, sans-serif;
+}
+.img-fill{
+    width: 100vw;
+    object-fit: cover;
+}
+.imgeFill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Icanfry{ 
+     position: absolute;
+     text-align: center;
+}
