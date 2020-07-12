@@ -2,8 +2,10 @@
     font-family: "Microsoft JhengHei",Arial, Helvetica, sans-serif;
 }
 .img-fill{
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
+    margin: 0;
+    padding: 0;
 }
 .imgeFill{
     display: flex;
@@ -14,4 +16,54 @@
 .Icanfry{ 
      position: absolute;
      text-align: center;
+}
+.resBox{
+    background-color: ghostwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px #ccc;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.ct{
+    text-align: center;
+}
+.skillColor{
+    height: 70vh;
+    margin-top: -5px;
+}
+.V10{
+    height: 10vh;
+    margin-bottom: 0px;
+}
+.blue-20{
+    background-color: #06092e !important;
+}
+.mycard{
+    margin-top: 70px;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 5px 5px 15px black;
+}
+.mycardimg{
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #CCC;
+    margin-top: -50px;
+    position: relative;
+    left: 25px;
+    width: 120px;
+    height: 120px;
+    box-shadow: 5px 5px 15px black;
+}
+.fmycardInword{
+    float: right;
+    position: relative;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    display: inline-block;
 }
