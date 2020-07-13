@@ -65,15 +65,34 @@
       <div class="container">
         <div class="row">
           <div class="col-12 ct text-white mt-5"><h1>技能</h1></div>
-          <div class="mycard">
+
+          <div class="mycard col-12 col-md-6 col-lg-4">
             <div>
               <div class="mycardimg"><img src="./img/html-01.png" alt=""></div>
               <div class="fmycardInword">HTML</div>
               <hr>
-              <div><canvas id="htmlcanvas" width="300" height="300"></canvas></div>
+              <div><canvas id="htmlcanvas" width="280" height="280"></canvas></div>
             </div>
-            <div></div>
           </div>
+
+          <div class="mycard col-12 col-md-6 col-lg-4">
+            <div>
+              <div class="mycardimg"><img  src="./img/JS-01.png" alt=""></div>
+              <hr>
+              <canvas id="Jscanvas" width="280" height="280"></canvas></div>
+            </div>
+          </div>
+
+          <div class="mycard col-12 col-md-6 col-lg-4">
+            <div>
+              <div class="mycardimg"><img  src="./img/JS-01.png" alt=""></div>
+              <hr>
+              <canvas id="Jscanvas2" width="280" height="280"></canvas></div>
+            </div>
+          </div>
+
+        
+
         </div>
       </div>
     </div>
@@ -84,6 +103,8 @@
     <footer></footer>
 <script>
   printHere('htmlcanvas',90);
+  printHere('Jscanvas',80);
+  printHere('Jscanvas2',80);
 
 
 
@@ -98,29 +119,29 @@
             let canvas = document.getElementById(e);
             let ctx = canvas.getContext('2d');
             let kk = a*1.5
-            canvas.width = 300;
-            canvas.height = 300;
+            canvas.width = 280;
+            canvas.height = 280;
             ctx.shadowBlur= 15;
 
             ctx.fillStyle= 'ghostwhite' ;
-            ctx.fillRect(0, 0, 300, 300);
+            ctx.fillRect(0, 0, 280, 280);
 
             ctx.beginPath();
             ctx.strokeStyle = '#06092e';
             ctx.lineWidth = 35;
-            ctx.arc(150, 150, 90, 0, 2*Math.PI);
+            ctx.arc(140, 140, 90, 0, 2*Math.PI);
             ctx.stroke();
 
             ctx.beginPath();
             ctx.shadowColor = '#2DA7E0'
             ctx.strokeStyle = '#2DA7E0';
             ctx.lineWidth = 35;
-            ctx.arc(150, 150, 90, degree(270), degree(70-kk) ,true);
+            ctx.arc(140, 140, 90, degree(270), degree(70-kk) ,true);
             ctx.stroke();
 
             ctx.font = "50px Microsoft JhengHei";
             ctx.fillStyle = '#2DA7E0'
-            ctx.fillText(a, 120, 170);
+            ctx.fillText(a, 110, 160);
     
         }
 </script>

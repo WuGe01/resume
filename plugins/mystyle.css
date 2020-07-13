@@ -1,5 +1,6 @@
-.{
+*{
     font-family: "Microsoft JhengHei",Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 .img-fill{
     width: 100%;
@@ -41,12 +42,11 @@
     background-color: #06092e !important;
 }
 .mycard{
-    margin-top: 70px;
+    width: 300px;
     background-color: ghostwhite;
     border-radius: 5px;
-    width: 300px;
-    height: 350px;
     box-shadow: 5px 5px 15px black;
+    margin: 0 10px;
 }
 .mycardimg{
     display: flex;
