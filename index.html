@@ -8,224 +8,36 @@
     <script src="./plugins/jquery-3.5.1.js"></script>
     <script src="./plugins/bootstrap.bundle.min.js"></script>
     <title>個人履歷</title>
-    <style>
-:root {
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-    --font-sans: 'Rubik', sans-serif;
-    --font-serif: 'Cardo', serif;
-}
-
-.page-content {
-    display: grid;
-    grid-gap: 1rem;
-    padding: 1rem;
-    max-width: 1024px;
-    margin: 0 auto;
-    font-family: var(--font-sans);
-}
-
-@media (min-width: 600px) {
-    .page-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 800px) {
-    .page-content {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.card {
-    position: relative;
-    display: flex;
-    -webkit-box-align: end;
-    align-items: flex-end;
-    overflow: hidden;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    color: whitesmoke;
-    background-color: whitesmoke;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 600px) {
-    .card {
-        height: 350px;
-    }
-}
-
-.card:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%;
-    background-size: cover;
-    background-position: 50% 40%;
-    transition: transform calc(var(--d) * 1.5) var(--e);
-    pointer-events: none;
-}
-
-.card:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    pointer-events: none;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-    transform: translateY(-50%);
-    transition: transform calc(var(--d) * 2) var(--e);
-
-}
-
-.card:nth-child(1):before {
-    background-image: url(./img/AA-01.jpg);
-}
-
-.card:nth-child(2):before {
-    background-image: url(./img/AA-02.jpg);
-}
-
-.card:nth-child(3):before {
-    background-image: url(./img/AA-03.jpg);
-}
-
-.card:nth-child(4):before {
-  background-image: url(./img/AA-04.jpg);
-}
-.card:nth-child(5):before {
-  background-image: url(./img/AA-06.jpg);
-}
-.card:nth-child(6):before {
-  background-image: url(./img/AA-07.jpg);
-}
-.card:nth-child(7):before {
-  background-image: url(./img/AA-08.jpg);
-}
-.card:nth-child(8):before {
-  background-image: url(./img/AA-05.jpg);
-}
-.card:nth-child(9):before {
-  background-image: url(./img/AA-09.jpg);
-}
-
-
-.content {
-    position: relative;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-    -webkit-transition: -webkit-transform var(--d) var(--e);
-    transition: -webkit-transform var(--d) var(--e);
-    transition: transform var(--d) var(--e);
-    transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
-    z-index: 1;
-}
-
-.content>*+* {
-    margin-top: 1rem;
-}
-
-.title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.copy {
-    font-family: var(--font-serif);
-    font-size: 1.125rem;
-    font-style: italic;
-    line-height: 1.35;
-}
-
-.btn {
-    cursor: pointer;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.65rem;
-    font-weight: bold;
-    letter-spacing: 0.025rem;
-    text-transform: uppercase;
-    color: white;
-    background-color: black;
-    border: none;
-}
-
-.btn:hover {
-    background-color: #0d0d0d;
-}
-
-.btn:focus {
-    outline: 1px dashed yellow;
-    outline-offset: 3px;
-}
-
-@media (hover: hover) and (min-width: 600px) {
-    .card:after {
-        transform: translateY(0);
-    }
-
-    .content {
-        transform: translateY(calc(100% - 4.5rem));
-    }
-
-    .content>*:not(.title) {
-        opacity: 0;
-        transform: translateY(1rem);
-        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-    }
-
-    .card:hover,
-    .card:focus-within {
-        align-items: center;
-    }
-
-    .card:hover:before,
-    .card:focus-within:before {
-        transform: translateY(-4%);
-    }
-
-    .card:hover:after,
-    .card:focus-within:after {
-        transform: translateY(-50%);
-    }
-
-    .card:hover .content,
-    .card:focus-within .content {
-        transform: translateY(0);
-    }
-
-    .card:hover .content>*:not(.title),
-    .card:focus-within .content>*:not(.title) {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: calc(var(--d) / 8);
-    }
-
-    .card:focus-within:before,
-    .card:focus-within:after,
-    .card:focus-within .content,
-    .card:focus-within .content>*:not(.title) {
-        transition-duration: 0s;
-    }
-}
-  </style>
 </head>
 <body>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header blue-20">
+        <h5 class="modal-title text-white" id="exampleModalLabel">登入管理</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="ct">
+          <label class="float-left">帳號：</label>
+          <input type="text" class="telInput" >
+        </div>
+        <div class="ct">
+          <label class="float-left">密碼：</label>
+          <input type="password" class="telInput" >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">登入</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- 形象牆 -->
     <div class="imgeFill"><img class="img-fill" src="./img/home.jpg">
         <div class="Icanfry">
@@ -249,7 +61,7 @@
                 <a class="nav-item nav-link text-white" href="#timeline-1"><i></i> 經歷</a>
                 <a class="nav-item nav-link text-white" href="#art"><i></i> 作品</a>
                 <a class="nav-item nav-link text-white" href="#tel"><i></i> 聯絡</a>
-                <a class="nav-item nav-link text-white" href="#"><i></i> 管理</a>
+                <a class="nav-item nav-link text-white touch" data-toggle="modal" data-target="#exampleModal"><i></i> 管理</a>
               </div>
             </div>
           </div>
@@ -257,7 +69,7 @@
       </header>
     <!-- 自傳區 -->
     <div class="container" id="res">
-      <div class="v10"></div>
+      <div class="v10" style="height: 30px;"></div>
         <div class="row mt-1 resBox">
             <div class="col-12 ct">
               <h2 class="timeline-header__title" style="color: black;">我的自傳</h2>
@@ -279,7 +91,7 @@
     </div>
     <!-- 技能區 -->
     <div class="skillColor blue-20" id="skill">
-      <div class="v10"></div>
+      <div class="v10" style="height: 30px;"></div>
       <div class="container">
         <div class="row">
           <div class="col-12 ct text-white mt-5">
@@ -460,8 +272,8 @@
         </div>
       </div>
     <!-- 作品集 -->
-    <div class="v10"></div>
-    <div class="container mt-5" id="art">
+    <div class="v10" style="height: 30px;" id="art"></div>
+    <div class="container mt-5">
       <div class="col-12 ct">
         <h2 class="timeline-header__title" style="color: black;">我的作品</h2>
         <h3 class="timeline-header__subtitle mb-5" style="color: black;">MY PORTFOLIO</h3>
@@ -548,9 +360,41 @@
         <h2 class="timeline-header__title">聯絡我</h2>
         <h3 class="timeline-header__subtitle mb-5">CONTACT INFORMATION</h3>
       </div>
+      <article class="row">
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">希望待遇：</label><br>
+          <input type="text" class="telInput" value="月薪35000元" readonly>
+        </div>
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">應徵職位：</label><br>
+          <input type="text" class="telInput" value="全職/全端網頁/工程師" readonly>
+        </div>
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">上班地點：</label><br>
+          <input type="text" class="telInput" value="台灣台北市、台灣新北市" readonly>
+        </div>
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">聯絡電話：</label><br>
+          <input type="text" class="telInput" value="0988-857-062" readonly>
+        </div>
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">信箱：</label><br>
+          <input type="text" class="telInput" value="bc781208@hotmail.com" readonly>
+        </div>
+        <div class="col-12 col-md-6 ct">
+          <label class="telLabel">建議聯絡時間:</label><br>
+          <input type="text" class="telInput" value="周一至周五下午六點至十一點與周六周日" readonly>
+        </div>
+        <div class="v10 mt-5" style="height: 120px;"></div>
+      </article>
     </div>
     <!-- footer部分 -->
-    <footer></footer>
+    <footer class="ctt mt-3">
+      <small class="mb-3">
+        吳宗融的個人履歷表 <br>
+        copyright &copy; <span>武戈01設計</span>. all rights reserved
+      </small>
+    </footer>
 <script>
 
 </script>
