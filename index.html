@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./plugins/mystyle.css">
     <script src="./plugins/jquery-3.5.1.js"></script>
     <script src="./plugins/bootstrap.bundle.min.js"></script>
+
     <title>個人履歷</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
                 <a class="nav-item nav-link text-white" href="#"><i></i> 首頁 </a>
                 <a class="nav-item nav-link text-white" href="#res"><i></i> 自傳</a>
                 <a class="nav-item nav-link text-white" href="#skill"><i></i> 技能</a>
-                <a class="nav-item nav-link text-white" href="#"><i></i> 經歷</a>
+                <a class="nav-item nav-link text-white" href="#timeline-1"><i></i> 經歷</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 作品</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 聯絡</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 管理</a>
@@ -44,7 +45,10 @@
     <div class="container" id="res">
       <div class="v10"></div>
         <div class="row mt-1 resBox">
-            <div class="col-12 ct"><h1>自傳</h1></div>
+            <div class="col-12 ct">
+              <h2 class="timeline-header__title">我的自傳</h2>
+              <h3 class="timeline-header__subtitle">MY AUTOBIOGRAPHY</h3>
+            </div>
             <div class="col-12 col-md-6 mt-2 ct" ><img src="./img/XX-02.jpg"></div>
             <div class="col-12 col-md-6 mt-2 ct h-100">
               本人畢業於私立世新大學<br>
@@ -64,7 +68,10 @@
       <div class="v10"></div>
       <div class="container">
         <div class="row">
-          <div class="col-12 ct text-white mt-5"><h1>技能</h1></div>
+          <div class="col-12 ct text-white mt-5">
+            <h2 class="timeline-header__title">我的專業技能</h2>
+            <h3 class="timeline-header__subtitle">MY PROFESSIONAL SKILLS</h3>
+          </div>
           
           <div class="col-12 col-md-6 col-lg-4 ctt mt-5">
           <div class="mycard">
@@ -166,67 +173,85 @@
                           <canvas id="MYSQLcanvas" width="280" height="280"></canvas></div>
                         </div>
                       </div>
-  
-
-
+                      <div class="V10  blue-20"></div>
         </div>
         </div>
       </div>
-
     <!-- 經歷區 -->
+      <div class="timeline-container" id="timeline-1">
+        <div class="timeline-header">
+          <h2 class="timeline-header__title">我的個人經歷</h2>
+          <h3 class="timeline-header__subtitle">MY PERSONAL HISTORY</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item" data-text="世新大學企管系畢業">
+            <div class="timeline__content"><img class="timeline__img" src="./img/EXP-01.jpg"/>
+              <h2 class="timeline__content-title">2012</h2>
+              <p class="timeline__content-desc">
+                  畢業於世新大學，企管系<br>
+                  曾擔任武學社社團幹部（活動與器材）<br>
+                  主要負責：器材的租借，與參與個社團活動場使用的協調<br>
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-text="聯合報業務　經歷一年半">
+            <div class="timeline__content"><img class="timeline__img" src="./img/EXP-02.jpg"/>
+              <h2 class="timeline__content-title">2014</h2>
+              <p class="timeline__content-desc">
+                  主要職責：<br>
+                  1. 維繫各大送報單位。<br>
+                  2. 爭取轄區各里里長報配合 <br>
+                  3. 維持廣告刊登業務<br>
+                  4. 與地方公廟立法委員舉辦公益活動或記者會<br>
+                  主要貢獻： <br>
+                  1. 增加與大安區區公所的活動合作（十萬元以下標案活動），提高活動業績5%<br>
+                  2. 協助夥伴大型活動案執行，如：嗡嗡包活動。<br>
+                  3. 重整轄區單位資料，提高作業管理效率10%。
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-text="美食映象平面設計與人事行政 經歷兩年">
+            <div class="timeline__content"><img class="timeline__img" src="./img/EXP-03.jpg"/>
+              <h2 class="timeline__content-title">2016</h2>
+              <p class="timeline__content-desc">
+                主要職責：<br>
+                1. 公司商業CIS設計：LOGO、DM設計、海報、形象設計。 <br>       
+                2. 公司印刷品管理、盤點、發稿發件印刷廠、跑印刷業務(B to B)。 <br>
+                3. 公司新創雜誌助理、負責雜誌資料收集，與文案編輯。 <br>
+                4. 公司舉辦商業加盟展(一年三次)、場地布置、及現場工作人員。 <br>
+                5. 公司舉辦座談課程(兩周一次)、場地布置、及現場工作人員、活動前準備。 <br>
+                <br>     
+                主要貢獻： <br>
+                1. 新辦雜誌業務，制定SOP標準化，簡化流程複雜度，增加執行效率30%。 <br>        
+                2. 重新制定行政事務SOP流程，分工更精確避免夥伴爭執，增加效率20%。<br>   
+                3. 公司網頁重新整理，提高網頁效率20%，並增加管理效率10%。<br> 
+                4. 成為商業CIS主設計三次，並完成設計專案。</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-text="爵恩設計印前業務兼平面設計　經歷一年半">
+            <div class="timeline__content"><img class="timeline__img" src="./img/EXP-04.jpg"/>
+              <h2 class="timeline__content-title">2018</h2>
+              <p class="timeline__content-desc">
+                主要職責： <br>
+                1. 公司印刷業務處理，發稿發件印刷廠、跑印刷業務(B to B)。 <br> 
+                2. 公司商業CIS設計：LOGO、DM設計、海報、形象設計。 <br>
+                3. 整理公司合約書，並擬定合約條例。 <br>
+                <br>
+                主要貢獻： 
+                1. 打通公司印刷廠商通路，並取得印刷A級優惠。<br>
+                2. 公司空間設計專案，擬定合作意向書。 <br>
+                3. 聯繫餐飲相關包材廠商，媒合客戶，增加公司廠商名單。<br></p>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- 作品集 -->
     <!-- 聯絡方式 -->
     <!-- footer部分 -->
     <footer></footer>
 <script>
-  printHere('htmlcanvas',90);
-  printHere('Jscanvas',80);
-  printHere('CSScanvas',80);
-  printHere('JQcanvas',70);
-  printHere('BScanvas',80);
-  printHere('PScanvas',80);
-  printHere('AIcanvas',80);
-  printHere('Gitcanvas',70);
-  printHere('PHPcanvas',80);
-  printHere('MYSQLcanvas',80);
 
-
-
-
-
-        function degree(degree) {
-            var factor = Math.PI/180;
-            return degree*factor;
-        }
-        function printHere(e,a) {
-            let canvas = document.getElementById(e);
-            let ctx = canvas.getContext('2d');
-            let kk = a*1.5
-            canvas.width = 280;
-            canvas.height = 280;
-            ctx.shadowBlur= 15;
-
-            ctx.fillStyle= 'ghostwhite' ;
-            ctx.fillRect(0, 0, 280, 280);
-
-            ctx.beginPath();
-            ctx.strokeStyle = '#06092e';
-            ctx.lineWidth = 35;
-            ctx.arc(140, 140, 90, 0, 2*Math.PI);
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.shadowColor = '#2DA7E0'
-            ctx.strokeStyle = '#2DA7E0';
-            ctx.lineWidth = 35;
-            ctx.arc(140, 140, 90, degree(270), degree(70-kk) ,true);
-            ctx.stroke();
-
-            ctx.font = "50px Microsoft JhengHei";
-            ctx.fillStyle = '#2DA7E0'
-            ctx.fillText(a, 110, 160);
-    
-        }
 </script>
+<script src="./plugins/myjs.js"></script>
 </body>
 </html>
