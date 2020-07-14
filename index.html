@@ -176,55 +176,43 @@
 
 @media (hover: hover) and (min-width: 600px) {
     .card:after {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
     .content {
-        -webkit-transform: translateY(calc(100% - 4.5rem));
         transform: translateY(calc(100% - 4.5rem));
     }
 
     .content>*:not(.title) {
         opacity: 0;
-        -webkit-transform: translateY(1rem);
         transform: translateY(1rem);
-        -webkit-transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
-        transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
         transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-        transition: transform var(--d) var(--e), opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
     }
 
     .card:hover,
     .card:focus-within {
-        -webkit-box-align: center;
         align-items: center;
     }
 
     .card:hover:before,
     .card:focus-within:before {
-        -webkit-transform: translateY(-4%);
         transform: translateY(-4%);
     }
 
     .card:hover:after,
     .card:focus-within:after {
-        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
 
     .card:hover .content,
     .card:focus-within .content {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
     .card:hover .content>*:not(.title),
     .card:focus-within .content>*:not(.title) {
         opacity: 1;
-        -webkit-transform: translateY(0);
         transform: translateY(0);
-        -webkit-transition-delay: calc(var(--d) / 8);
         transition-delay: calc(var(--d) / 8);
     }
 
@@ -232,7 +220,6 @@
     .card:focus-within:after,
     .card:focus-within .content,
     .card:focus-within .content>*:not(.title) {
-        -webkit-transition-duration: 0s;
         transition-duration: 0s;
     }
 }
@@ -261,7 +248,7 @@
                 <a class="nav-item nav-link text-white" href="#skill"><i></i> 技能</a>
                 <a class="nav-item nav-link text-white" href="#timeline-1"><i></i> 經歷</a>
                 <a class="nav-item nav-link text-white" href="#art"><i></i> 作品</a>
-                <a class="nav-item nav-link text-white" href="#"><i></i> 聯絡</a>
+                <a class="nav-item nav-link text-white" href="#tel"><i></i> 聯絡</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 管理</a>
               </div>
             </div>
@@ -555,6 +542,13 @@
       </div>
     </div>
     <!-- 聯絡方式 -->
+    <div class="mt-5 blue-20" id="tel">
+      <div class="v10 mt-5" style="height: 30px;"></div>
+      <div class="col-12 ct mt-5 ">
+        <h2 class="timeline-header__title">聯絡我</h2>
+        <h3 class="timeline-header__subtitle mb-5">CONTACT INFORMATION</h3>
+      </div>
+    </div>
     <!-- footer部分 -->
     <footer></footer>
 <script>
