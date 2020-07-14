@@ -74,8 +74,8 @@
 .fmycardInword{
   float: right;
   position: relative;
-  right: 20px;
-  top: -30px;
+  right: 10px;
+  top: -50px;
   font-size: 30px;
   display: inline-block;
 }
@@ -449,4 +449,5 @@ background-image: url(../img/AA-09.jpg);
 .skilltext{
   padding: 5px;
   white-space:pre-wrap;
+  text-align: center;
 }

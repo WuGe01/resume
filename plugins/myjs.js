@@ -52,45 +52,4 @@
       });
     };
 })(jQuery);
-  
 $("#timeline-1").timeline();
-
-printHere('htmlcanvas',90);
-printHere('Jscanvas',80);
-printHere('CSScanvas',80);
-printHere('JQcanvas',70);
-printHere('BScanvas',80);
-printHere('PScanvas',80);
-printHere('AIcanvas',80);
-printHere('Gitcanvas',70);
-printHere('PHPcanvas',80);
-printHere('MYSQLcanvas',80);
-
-function degree(degree) {
-    var factor = Math.PI/180;
-    return degree*factor;
-}
-function printHere(e,a) {
-    let canvas = document.getElementById(e);
-    let ctx = canvas.getContext('2d');
-    let kk = a*1.5
-    canvas.width = 280;
-    canvas.height = 280;
-    ctx.shadowBlur= 15;
-    ctx.fillStyle= 'ghostwhite' ;
-    ctx.fillRect(0, 0, 280, 280);
-    ctx.beginPath();
-    ctx.strokeStyle = '#06092e';
-    ctx.lineWidth = 35;
-    ctx.arc(140, 140, 90, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.shadowColor = '#2DA7E0'
-    ctx.strokeStyle = '#2DA7E0';
-    ctx.lineWidth = 35;
-    ctx.arc(140, 140, 90, degree(270), degree(70-kk) ,true);
-    ctx.stroke();
-    ctx.font = "50px Microsoft JhengHei";
-    ctx.fillStyle = '#2DA7E0'
-    ctx.fillText(a, 110, 160);
-}
