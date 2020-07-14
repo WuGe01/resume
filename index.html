@@ -7,8 +7,236 @@
     <link rel="stylesheet" href="./plugins/mystyle.css">
     <script src="./plugins/jquery-3.5.1.js"></script>
     <script src="./plugins/bootstrap.bundle.min.js"></script>
-
     <title>個人履歷</title>
+    <style>
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: 'Rubik', sans-serif;
+    --font-serif: 'Cardo', serif;
+}
+
+.page-content {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+}
+
+@media (min-width: 600px) {
+    .page-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .page-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 600px) {
+    .card {
+        height: 350px;
+    }
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 50% 40%;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+}
+
+.card:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+
+}
+
+.card:nth-child(1):before {
+    background-image: url(./img/AA-01.jpg);
+}
+
+.card:nth-child(2):before {
+    background-image: url(./img/AA-02.jpg);
+}
+
+.card:nth-child(3):before {
+    background-image: url(./img/AA-03.jpg);
+}
+
+.card:nth-child(4):before {
+  background-image: url(./img/AA-04.jpg);
+}
+.card:nth-child(5):before {
+  background-image: url(./img/AA-06.jpg);
+}
+.card:nth-child(6):before {
+  background-image: url(./img/AA-07.jpg);
+}
+.card:nth-child(7):before {
+  background-image: url(./img/AA-08.jpg);
+}
+.card:nth-child(8):before {
+  background-image: url(./img/AA-05.jpg);
+}
+.card:nth-child(9):before {
+  background-image: url(./img/AA-09.jpg);
+}
+
+
+.content {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    -webkit-transition: -webkit-transform var(--d) var(--e);
+    transition: -webkit-transform var(--d) var(--e);
+    transition: transform var(--d) var(--e);
+    transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
+    z-index: 1;
+}
+
+.content>*+* {
+    margin-top: 1rem;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.copy {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #0d0d0d;
+}
+
+.btn:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+    .card:after {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    .content {
+        -webkit-transform: translateY(calc(100% - 4.5rem));
+        transform: translateY(calc(100% - 4.5rem));
+    }
+
+    .content>*:not(.title) {
+        opacity: 0;
+        -webkit-transform: translateY(1rem);
+        transform: translateY(1rem);
+        -webkit-transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+        transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+    }
+
+    .card:hover,
+    .card:focus-within {
+        -webkit-box-align: center;
+        align-items: center;
+    }
+
+    .card:hover:before,
+    .card:focus-within:before {
+        -webkit-transform: translateY(-4%);
+        transform: translateY(-4%);
+    }
+
+    .card:hover:after,
+    .card:focus-within:after {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .card:hover .content,
+    .card:focus-within .content {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    .card:hover .content>*:not(.title),
+    .card:focus-within .content>*:not(.title) {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition-delay: calc(var(--d) / 8);
+        transition-delay: calc(var(--d) / 8);
+    }
+
+    .card:focus-within:before,
+    .card:focus-within:after,
+    .card:focus-within .content,
+    .card:focus-within .content>*:not(.title) {
+        -webkit-transition-duration: 0s;
+        transition-duration: 0s;
+    }
+}
+  </style>
 </head>
 <body>
     <!-- 形象牆 -->
@@ -32,7 +260,7 @@
                 <a class="nav-item nav-link text-white" href="#res"><i></i> 自傳</a>
                 <a class="nav-item nav-link text-white" href="#skill"><i></i> 技能</a>
                 <a class="nav-item nav-link text-white" href="#timeline-1"><i></i> 經歷</a>
-                <a class="nav-item nav-link text-white" href="#"><i></i> 作品</a>
+                <a class="nav-item nav-link text-white" href="#art"><i></i> 作品</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 聯絡</a>
                 <a class="nav-item nav-link text-white" href="#"><i></i> 管理</a>
               </div>
@@ -41,13 +269,12 @@
         </nav>
       </header>
     <!-- 自傳區 -->
-
     <div class="container" id="res">
       <div class="v10"></div>
         <div class="row mt-1 resBox">
             <div class="col-12 ct">
-              <h2 class="timeline-header__title">我的自傳</h2>
-              <h3 class="timeline-header__subtitle">MY AUTOBIOGRAPHY</h3>
+              <h2 class="timeline-header__title" style="color: black;">我的自傳</h2>
+              <h3 class="timeline-header__subtitle mb-5" style="color: black;">MY AUTOBIOGRAPHY</h3>
             </div>
             <div class="col-12 col-md-6 mt-2 ct" ><img src="./img/XX-02.jpg"></div>
             <div class="col-12 col-md-6 mt-2 ct h-100">
@@ -178,7 +405,7 @@
         </div>
       </div>
     <!-- 經歷區 -->
-      <div class="timeline-container" id="timeline-1">
+    <div class="timeline-container" id="timeline-1">
         <div class="timeline-header">
           <h2 class="timeline-header__title">我的個人經歷</h2>
           <h3 class="timeline-header__subtitle">MY PERSONAL HISTORY</h3>
@@ -246,6 +473,87 @@
         </div>
       </div>
     <!-- 作品集 -->
+    <div class="v10"></div>
+    <div class="container mt-5" id="art">
+      <div class="col-12 ct">
+        <h2 class="timeline-header__title" style="color: black;">我的作品</h2>
+        <h3 class="timeline-header__subtitle mb-5" style="color: black;">MY PORTFOLIO</h3>
+      </div>
+      <div class="page-content">
+        <div class="card col">
+          <div class="content">
+              <h2 class="title text-dark">萬年曆</h2>
+              <p class="copy">使用php製作的萬年曆</p>
+              <a href="http://220.128.133.15/s1090202/calendar/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">JS闖關小遊戲</h2>
+              <p class="copy">純JS製作，配合使用套件Sweetalrt</p>
+                <a href="https://wuge01.github.io/little_game01/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">調色盤</h2>
+              <p class="copy">純JS製作的顏色選擇小工具</p>
+                <a href="https://wuge01.github.io/SeclectColer/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">數字時鐘</h2>
+              <p class="copy">純JS製作會呼吸的時鐘</p>
+                <a href="https://wuge01.github.io/DigiClock/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">指針時鐘</h2>
+              <p class="copy">會隨機分配背景齒輪的時鐘</p>
+                <a href="http://220.128.133.15/s1090202/RoundClock2/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">一頁式網頁(練習)</h2>
+              <p class="copy">配和使用BS進行網頁設計</p>
+                <a href="https://wuge01.github.io/bookBS-Project-Hotel/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title text-dark">餵熊貓JS小遊戲</h2>
+              <p class="copy">使用JS製作的網頁小遊戲</p>
+                <a href="https://wuge01.github.io/Gopher/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title">Canvas時鐘</h2>
+              <p class="copy">嘗試純用Canvas製作時鐘</p>
+                <a href="https://wuge01.github.io/RoundClock/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+        <div class="card col">
+          <div class="content">
+              <h2 class="title text-dark">統一發票兌獎系統</h2>
+              <p class="copy">結合MYSQL與PHP製作的個人使用的統一發票兌獎系統</p>
+                <a href="http://220.128.133.15/s1090202/invoice/" target='_blank'><button class="btn">連結</button></a>
+          </div>
+      </div>
+
+      </div>
+    </div>
     <!-- 聯絡方式 -->
     <!-- footer部分 -->
     <footer></footer>
