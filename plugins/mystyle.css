@@ -446,3 +446,7 @@ background-image: url(../img/AA-09.jpg);
 .touch{
   cursor: pointer;
 }
+.skilltext{
+  padding: 5px;
+  white-space:pre-wrap;
+}
