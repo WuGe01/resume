@@ -53,3 +53,4 @@
     };
 })(jQuery);
 $("#timeline-1").timeline();
+new WOW().init();
