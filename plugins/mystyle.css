@@ -450,7 +450,10 @@ background-image: url(../img/AA-09.jpg);
   cursor: pointer;
 }
 .skilltext{
-  padding: 5px;
-  white-space:pre-wrap;
-  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 30px;
+  text-align: left !important;
+
 }
